@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTaskActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/add_task"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/it_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/task_title"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/guideline_begin"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/it_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/ic_calendar"
+        android:hint="@string/task_date"
+        android:layout_marginEnd="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@id/it_title"
+        app:layout_constraintStart_toStartOf="@id/guideline_begin"
+        app:layout_constraintEnd_toStartOf="@id/it_time"
+        android:layout_marginRight="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:focusable="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/it_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/task_time"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toTopOf="@id/it_date"
+        app:layout_constraintStart_toEndOf="@id/it_date"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:focusable="false"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_begin"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toTopOf="@id/btn_add_task"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_task"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_task"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_begin"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
