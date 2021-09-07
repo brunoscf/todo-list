@@ -58,10 +58,11 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/tl_title"
         app:layout_constraintStart_toStartOf="@id/guideline_begin"
-        app:layout_constraintEnd_toStartOf="@id/it_time"
+        app:layout_constraintEnd_toStartOf="@id/tl_time"
         android:layout_marginRight="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/it_date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
@@ -70,7 +71,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/it_time"
+        android:id="@+id/tl_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/task_time"
@@ -81,7 +82,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/it_date"
+            android:id="@+id/it_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
